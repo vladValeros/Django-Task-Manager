@@ -1,0 +1,14 @@
+# Virtual Environment
+venv/
+__pycache__/
+
+# Django Migrations
+*.pyc
+*.pyo
+
+# IDE and System Files
+.vscode/
+.DS_Store
+
+# Environment Variables
+.env

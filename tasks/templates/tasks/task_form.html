@@ -1,0 +1,43 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+<!-- Top Navigation Bar -->
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            {% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
+        </span>
+        <a href="{% url 'task_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="id_title" class="form-label">Title</label>
+                    {{ form.title }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_description" class="form-label">Description</label>
+                    {{ form.description }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_due_date" class="form-label">Due Date</label>
+                    {{ form.due_date }}
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

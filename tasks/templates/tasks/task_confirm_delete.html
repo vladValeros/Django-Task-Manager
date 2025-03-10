@@ -1,0 +1,25 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+<!-- Top Navigation Bar -->
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Confirm Delete</span>
+        <a href="{% url 'task_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <p class="fs-5">Are you sure you want to delete <strong>"{{ task.title }}"</strong>?</p>
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
