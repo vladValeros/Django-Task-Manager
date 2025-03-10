@@ -2,7 +2,7 @@
 
 A simple task management system built with Django and MySQL. In fulfillment of the requirements in CC105-Lab
 
-A Django-based Task Manager with CRUD functionality. The status column updates automatically based on the due date:  
+The status column updates automatically based on the due date:  
 - If the due date has passed, the status will be **"Overdue"**.  
 - If the due date is in the future or today, the status remains **"Pending"**.  
 
