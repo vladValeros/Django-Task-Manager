@@ -44,6 +44,7 @@ python manage.py startapp tasks
 ### 5. Update Settings and Configuration
 Add 'tasks' to INSTALLED_APPS in settings.py.
 Configure DATABASES in settings.py to use MySQL.
+On SQL, create a database named "task_manager"
 ```sh
 DATABASES = {
     'default': {
